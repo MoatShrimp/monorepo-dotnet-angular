@@ -1,0 +1,8 @@
+packages:
+  - "apps/**"
+  - "libs/**"
+
+  # ignore outputs
+  - "!**/artifacts/**"
+  - "!**/dist/**"
+  - "!**/node_modules/**"

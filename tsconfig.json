@@ -1,5 +1,3 @@
-/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
-/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -7,6 +5,11 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "paths": {
+      "my-lib": [
+        "./dist/my-lib"
+      ]
+    },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
@@ -21,6 +24,25 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"]
+  "files": [],
+  "references": [
+    {
+      "path": "./libs/my-lib/tsconfig.lib.json"
+    },
+    {
+      "path": "./libs/my-lib/tsconfig.spec.json"
+    },
+    {
+      "path": "./libs/mono-web/tsconfig.app.json"
+    },
+    {
+      "path": "./libs/mono-web/tsconfig.spec.json"
+    },
+    {
+      "path": "./libs/fake-web/tsconfig.app.json"
+    },
+    {
+      "path": "./libs/fake-web/tsconfig.spec.json"
+    }
+  ]
 }

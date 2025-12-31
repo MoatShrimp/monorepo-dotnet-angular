@@ -4,24 +4,26 @@
   "cli": {
     "packageManager": "pnpm"
   },
+  "newProjectRoot": "libs",
   "projects": {
-    "dff": {
+    "mono-web": {
       "projectType": "application",
-      "root": "",
-      "sourceRoot": "src",
+      "root": "apps/web",
+      "sourceRoot": "apps/web/src",
+      "prefix": "mono",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "src/main.ts",
-            "tsConfig": "tsconfig.json",
-            "styles": ["src/styles.css"],
+            "browser": "apps/web/src/main.ts",
+            "tsConfig": "apps/web/tsconfig.app.json",
+            "styles": [ "apps/web/src/styles.css" ],
             "outputPath": {
-              "base": "dist",
+              "base": "artifacts/web",
               "browser": ""
             }
           },
-          "configurations": {
+          "configurations": {            
             "development": {
               "optimization": false,
               "extractLicenses": false,
@@ -32,8 +34,8 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "options": {
-            "buildTarget": "dff:build:development",
-            "proxyConfig": "src/proxy.conf.mjs"
+            "buildTarget": "mono-web:build:development",
+            "proxyConfig": "apps/web/src/proxy.conf.mjs"
           }
         },
         "test": {

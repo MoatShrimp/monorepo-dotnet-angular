@@ -1,9 +1,9 @@
 {
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
   "recommendations": [
     "microsoft-aspire.aspire-vscode",
     "ms-dotnettools.csdevkit",
     "streetsidesoftware.code-spell-checker",
-    "amodio.toggle-excluded-files"
+    "amodio.toggle-excluded-files",
+    "angular.ng-template"
   ]
 }

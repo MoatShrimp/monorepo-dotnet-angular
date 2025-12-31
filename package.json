@@ -1,5 +1,5 @@
 {
-  "name": "mono-web",
+  "name": "mono",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,20 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "angular"
-        }
-      }
-    ]
-  },
   "private": true,
-  "packageManager": "pnpm@10.26.1",
+  "packageManager": "pnpm@10.27.0",
   "dependencies": {
     "@angular/common": "^21.0.0",
     "@angular/compiler": "^21.0.0",
@@ -36,10 +24,8 @@
     "@angular/build": "^21.0.4",
     "@angular/cli": "^21.0.4",
     "@angular/compiler-cli": "^21.0.0",
-    "@tailwindcss/postcss": "^4.1.12",
     "jsdom": "^27.1.0",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.12",
+    "ng-packagr": "^21.0.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
   }
