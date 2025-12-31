@@ -1,0 +1,47 @@
+<Project>
+  <PropertyGroup>
+    <!-- Repo layout -->
+    <RepoRoot>$(MSBuildThisFileDirectory)</RepoRoot>
+    <Libs>$(RepoRoot)libs</Libs>
+    <Apps>$(RepoRoot)apps</Apps>
+    <ArtifactsDir>$(RepoRoot)artifacts/</ArtifactsDir>
+
+    <!-- Build options-->
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(ArtifactsDir)/**/*</DefaultItemExcludes>
+
+    <!-- Language / safety -->
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!-- Build determinism -->
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <RestoreLockedMode Condition="'$(CI)' == 'true'">true</RestoreLockedMode>
+    <PathMap>$(MSBuildProjectDirectory)=.</PathMap>
+    <IsPackable>false</IsPackable>
+
+    <!-- Code strictness -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+
+  <!-- Repo warnings -->
+  <Target
+    Name="RepoPolicy_Enforce"
+    BeforeTargets="PrepareForBuild">
+    <Error 
+      Condition="'$(Nullable)' != 'enable'"
+      Text="Repo policy: Nullable must be enabled (Nullable=enable)." />
+    <Error 
+      Condition="'$(TreatWarningsAsErrors)' != 'true'"
+      Text="Repo policy: TreatWarningsAsErrors must be true." />
+    <Error 
+      Condition="'$(EnforceCodeStyleInBuild)' != 'true'"
+      Text="Repo policy: EnforceCodeStyleInBuild must be true." />
+    <Error 
+      Condition="'$(IsPackable)' == 'true'"
+      Text="Repo policy: IsPackable must be false for internal services/apps." />
+  </Target>
+</Project>

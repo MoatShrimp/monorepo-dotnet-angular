@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="dev/app-host/Mono.AppHost.csproj" />
+  <Folder Name="/apps/">
+    <Project Path="apps/api/src//Mono.Api.csproj" />
+    <Project Path="apps/web/mono-web.esproj" />
+  </Folder>
+  <Folder Name="/libs/">
+    <Project Path="libs/service-defaults/Mono.ServiceDefaults.csproj" />
+  </Folder>
+</Solution>
