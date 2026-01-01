@@ -121,6 +121,7 @@
     "Antiforgery",
     "esproj",
     "HSTS",
+    "packagr",
     "weatherforecast",
     "webfrontend",
     "Xunit"
