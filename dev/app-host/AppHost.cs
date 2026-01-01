@@ -8,6 +8,7 @@ var apiService = builder.AddProject<Projects.Mono_Api>("api")
 builder.AddViteApp("webfrontend", builder.GetRepoRoot())
     .WithPnpm()
     .WithRunScript("start")
+    .WithOtlpExporter(protocol: OtlpProtocol.HttpProtobuf)
     .WithReference(apiService)
     .WaitFor(apiService);
 

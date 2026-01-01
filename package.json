@@ -26,6 +26,14 @@
     "@angular/compiler-cli": "^21.0.0",
     "jsdom": "^27.1.0",
     "ng-packagr": "^21.0.0",
+    "@opentelemetry/auto-instrumentations-web": "^0.54.0",
+    "@opentelemetry/context-zone": "^2.2.0",
+    "@opentelemetry/exporter-trace-otlp-proto": "^0.208.0",
+    "@opentelemetry/instrumentation": "^0.208.0",
+    "@opentelemetry/resources": "^2.2.0",
+    "@opentelemetry/sdk-trace-base": "^2.2.0",
+    "@opentelemetry/sdk-trace-web": "^2.2.0",
+    "@opentelemetry/semantic-conventions": "^1.38.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
   }
