@@ -5,10 +5,9 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "baseUrl": ".",
     "paths": {
-      "my-lib": [
-        "./dist/my-lib"
-      ]
+      "@mono/*": ["./libs/*/src/public-api.ts"]
     },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
@@ -27,22 +26,16 @@
   "files": [],
   "references": [
     {
-      "path": "./libs/my-lib/tsconfig.lib.json"
+      "path": "./apps/web/tsconfig.app.json"
     },
     {
-      "path": "./libs/my-lib/tsconfig.spec.json"
+      "path": "./apps/web/tsconfig.spec.json"
     },
     {
-      "path": "./libs/mono-web/tsconfig.app.json"
+      "path": "./libs/angular-aspire-telemetry/tsconfig.lib.json"
     },
     {
-      "path": "./libs/mono-web/tsconfig.spec.json"
-    },
-    {
-      "path": "./libs/fake-web/tsconfig.app.json"
-    },
-    {
-      "path": "./libs/fake-web/tsconfig.spec.json"
+      "path": "./libs/angular-aspire-telemetry/tsconfig.spec.json"
     }
   ]
 }
